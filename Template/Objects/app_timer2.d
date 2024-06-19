@@ -23,12 +23,12 @@
 .\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\app_error_weak.h
 .\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\app_util.h
 .\objects\app_timer2.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
-.\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\atomic_fifo\nrf_atfifo.h
-.\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\nrf_assert.h
 .\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\log\nrf_log_instance.h
 .\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\experimental_section_vars\nrf_section.h
 .\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\log\nrf_log_types.h
 .\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\sortlist\nrf_sortlist.h
+.\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\atomic_fifo\nrf_atfifo.h
+.\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\nrf_assert.h
 .\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\delay\nrf_delay.h
 .\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\modules\nrfx\nrfx.h
 .\objects\app_timer2.o: ..\nRF5_SDK_17.1.0_ddde560\integration\nrfx\nrfx_config.h

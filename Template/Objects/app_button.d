@@ -45,13 +45,14 @@
 .\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\sdk_resources.h
 .\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\modules\nrfx\drivers/nrfx_errors.h
 .\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\timer\app_timer.h
+.\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\log\nrf_log_instance.h
+.\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\experimental_section_vars\nrf_section.h
+.\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\log\nrf_log_types.h
+.\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\sortlist\nrf_sortlist.h
 .\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\integration\nrfx\legacy\nrf_drv_gpiote.h
 .\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\modules\nrfx\drivers\include\nrfx_gpiote.h
 .\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\modules\nrfx\hal/nrf_gpiote.h
 .\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\log\nrf_log.h
-.\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\experimental_section_vars\nrf_section.h
 .\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\strerror\nrf_strerror.h
 .\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\log\src\nrf_log_internal.h
 .\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\drivers_nrf\nrf_soc_nosd\nrf_error.h
-.\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\log\nrf_log_instance.h
-.\objects\app_button.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\log\nrf_log_types.h
