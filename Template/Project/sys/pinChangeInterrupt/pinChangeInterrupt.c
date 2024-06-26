@@ -2,7 +2,7 @@
 // Created by joey on 2024-06-18.
 //
 
-#include "pinInterrupt.h"
+#include "pinChangeInterrupt.h"
 
 void handlerMAX30205(nrf_drv_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
@@ -55,7 +55,7 @@ void initRDYPinAD7171()
     nrf_drv_gpiote_in_event_enable(P11, true);
 }
 
-void initPinInterrupt()
+void initPinChangeInterrupt()
 {
     ret_code_t err_code;
 	

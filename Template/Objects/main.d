@@ -1,8 +1,7 @@
 .\objects\main.o: main.c
 .\objects\main.o: Project/app/app.h
-.\objects\main.o: Project/api/api.h
-.\objects\main.o: Project/api/i2c/i2c.h
-.\objects\main.o: Project/api/i2c/../../sys/headerfile.h
+.\objects\main.o: Project/app/bma400/bma400.h
+.\objects\main.o: Project\api\../sys/headerfile.h
 .\objects\main.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
 .\objects\main.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdbool.h
 .\objects\main.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
@@ -91,6 +90,11 @@
 .\objects\main.o: ..\nRF5_SDK_17.1.0_ddde560\modules\nrfx\drivers\include\nrfx_spi.h
 .\objects\main.o: ..\nRF5_SDK_17.1.0_ddde560\modules\nrfx\hal/nrf_spi.h
 .\objects\main.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\uart\app_uart.h
+.\objects\main.o: Project\api\../api/i2c/i2c.h
+.\objects\main.o: Project\api\../api/i2c/../../sys/headerfile.h
+.\objects\main.o: Project/api/api.h
+.\objects\main.o: Project/api/i2c/i2c.h
+.\objects\main.o: Project/api/i2c/../../sys/headerfile.h
 .\objects\main.o: Project/api/spi/spi.h
 .\objects\main.o: Project/api/spi/../../sys/headerfile.h
 .\objects\main.o: Project/api/uart/uart.h
@@ -104,8 +108,8 @@
 .\objects\main.o: Project/sys/sys.h
 .\objects\main.o: Project/sys/timeInterrupt\timeInterrupt.h
 .\objects\main.o: Project/sys/timeInterrupt\../../sys/headerfile.h
-.\objects\main.o: Project/sys/pinInterrupt\pinInterrupt.h
-.\objects\main.o: Project/sys/pinInterrupt\../../sys/headerfile.h
+.\objects\main.o: Project/sys/pinChangeInterrupt\pinChangeInterrupt.h
+.\objects\main.o: Project/sys/pinChangeInterrupt\../../sys/headerfile.h
 .\objects\main.o: Project/sys/headerfile.h
 .\objects\main.o: Project/protocol/protocol.h
 .\objects\main.o: Project/filter/filter.h

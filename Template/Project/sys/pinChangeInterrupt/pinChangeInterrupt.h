@@ -1,4 +1,8 @@
-#include "../../sys/headerfile.h"
+//
+// Created by joey on 2024-06-18.
+//
+
+#include "../sys/headerfile.h"
 
 #define P25					ARDUINO_13_PIN              
 #define P24					ARDUINO_12_PIN              
@@ -15,4 +19,4 @@
 #define P12					ARDUINO_1_PIN              
 #define P11					ARDUINO_0_PIN               
 
-void initPinInterrupt();
+void initPinChangeInterrupt();
