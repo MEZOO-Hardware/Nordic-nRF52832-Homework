@@ -4,7 +4,7 @@
 
 #include "rtt.h"
 
-void initSeggerRtt()
+void initSeggerRTT()
 {
     APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
     NRF_LOG_DEFAULT_BACKENDS_INIT();

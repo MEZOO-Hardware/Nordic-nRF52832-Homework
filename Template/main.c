@@ -16,7 +16,7 @@ void initPeripherals()
 {
 		initNRF52Port();
     initUART();
-		initSeggerRtt();
+		initSeggerRTT();
     initI2C();
     initSPI();
 		initADC();

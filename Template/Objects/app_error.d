@@ -1,4 +1,4 @@
-.\objects\app_error.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\app_error.c
+.\objects\app_error.o: ..\nRF5_SDK\components\libraries\util\app_error.c
 .\objects\app_error.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf.h
 .\objects\app_error.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf52.h
 .\objects\app_error.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h
@@ -13,9 +13,9 @@
 .\objects\app_error.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf52_name_change.h
 .\objects\app_error.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\compiler_abstraction.h
 .\objects\app_error.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
-.\objects\app_error.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\app_error.h
+.\objects\app_error.o: ..\nRF5_SDK\components\libraries\util\app_error.h
 .\objects\app_error.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdbool.h
-.\objects\app_error.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\sdk_errors.h
-.\objects\app_error.o: ..\nRF5_SDK_17.1.0_ddde560\components\drivers_nrf\nrf_soc_nosd\nrf_error.h
-.\objects\app_error.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\nordic_common.h
-.\objects\app_error.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\app_error_weak.h
+.\objects\app_error.o: ..\nRF5_SDK\components\libraries\util\sdk_errors.h
+.\objects\app_error.o: ..\nRF5_SDK\components\drivers_nrf\nrf_soc_nosd\nrf_error.h
+.\objects\app_error.o: ..\nRF5_SDK\components\libraries\util\nordic_common.h
+.\objects\app_error.o: ..\nRF5_SDK\components\libraries\util\app_error_weak.h

@@ -1,5 +1,5 @@
-.\objects\nrf_assert.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\nrf_assert.c
-.\objects\nrf_assert.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\nrf_assert.h
+.\objects\nrf_assert.o: ..\nRF5_SDK\components\libraries\util\nrf_assert.c
+.\objects\nrf_assert.o: ..\nRF5_SDK\components\libraries\util\nrf_assert.h
 .\objects\nrf_assert.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
 .\objects\nrf_assert.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf.h
 .\objects\nrf_assert.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf52.h
@@ -13,10 +13,10 @@
 .\objects\nrf_assert.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf51_to_nrf52.h
 .\objects\nrf_assert.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf52_name_change.h
 .\objects\nrf_assert.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\compiler_abstraction.h
-.\objects\nrf_assert.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\app_error.h
+.\objects\nrf_assert.o: ..\nRF5_SDK\components\libraries\util\app_error.h
 .\objects\nrf_assert.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
 .\objects\nrf_assert.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdbool.h
-.\objects\nrf_assert.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\sdk_errors.h
-.\objects\nrf_assert.o: ..\nRF5_SDK_17.1.0_ddde560\components\drivers_nrf\nrf_soc_nosd\nrf_error.h
-.\objects\nrf_assert.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\nordic_common.h
-.\objects\nrf_assert.o: ..\nRF5_SDK_17.1.0_ddde560\components\libraries\util\app_error_weak.h
+.\objects\nrf_assert.o: ..\nRF5_SDK\components\libraries\util\sdk_errors.h
+.\objects\nrf_assert.o: ..\nRF5_SDK\components\drivers_nrf\nrf_soc_nosd\nrf_error.h
+.\objects\nrf_assert.o: ..\nRF5_SDK\components\libraries\util\nordic_common.h
+.\objects\nrf_assert.o: ..\nRF5_SDK\components\libraries\util\app_error_weak.h

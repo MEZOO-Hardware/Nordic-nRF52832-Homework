@@ -1,6 +1,6 @@
-.\objects\nrf_soc.o: ..\nRF5_SDK_17.1.0_ddde560\components\drivers_nrf\nrf_soc_nosd\nrf_soc.c
+.\objects\nrf_soc.o: ..\nRF5_SDK\components\drivers_nrf\nrf_soc_nosd\nrf_soc.c
 .\objects\nrf_soc.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
-.\objects\nrf_soc.o: ..\nRF5_SDK_17.1.0_ddde560\components\drivers_nrf\nrf_soc_nosd\nrf_soc.h
+.\objects\nrf_soc.o: ..\nRF5_SDK\components\drivers_nrf\nrf_soc_nosd\nrf_soc.h
 .\objects\nrf_soc.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
 .\objects\nrf_soc.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf.h
 .\objects\nrf_soc.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf52.h
@@ -14,4 +14,4 @@
 .\objects\nrf_soc.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf51_to_nrf52.h
 .\objects\nrf_soc.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\nrf52_name_change.h
 .\objects\nrf_soc.o: C:\Users\KANGJONGYEOP\AppData\Local\Arm\Packs\NordicSemiconductor\nRF_DeviceFamilyPack\8.44.1\Device\Include\compiler_abstraction.h
-.\objects\nrf_soc.o: ..\nRF5_SDK_17.1.0_ddde560\components\drivers_nrf\nrf_soc_nosd\nrf_error.h
+.\objects\nrf_soc.o: ..\nRF5_SDK\components\drivers_nrf\nrf_soc_nosd\nrf_error.h
