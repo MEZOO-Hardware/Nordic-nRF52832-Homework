@@ -4,6 +4,12 @@
 
 #include "adc.h"
 
+static nrf_saadc_value_t     m_buffer_pool[1][SAMPLES_IN_BUFFER];
+static nrf_ppi_channel_t     m_ppi_channel;
+static uint32_t              m_adc_evt_counter;
+static uint16_t rawDataADC;
+static float resultValueADC;
+
 /* Timer instance. */
 const nrf_drv_timer_t timerSelect2 = NRF_DRV_TIMER_INSTANCE(2);
 
@@ -19,7 +25,7 @@ void saadc_sampling_event_init()
     err_code = nrf_drv_ppi_init();
     APP_ERROR_CHECK(err_code);
 	
-    uint32_t time_ms = 4; 																														// Timer Setting
+    uint32_t time_ms = 8; 																														// Timer Setting
     uint32_t time_ticks;
 
     nrf_drv_timer_config_t configTimer2 = NRF_DRV_TIMER_DEFAULT_CONFIG;
@@ -74,8 +80,11 @@ void readADC(nrf_drv_saadc_evt_t const * p_event)
 //        m_adc_evt_counter++;
 			
 			
-//				rawDataADC = p_event->data.done.p_buffer[0];
-//        resultValueADC = ADC_RESULT_IN_VOLTS(rawDataADC);
+				rawDataADC = p_event->data.done.p_buffer[0];
+        resultValueADC = ADC_RESULT_IN_VOLTS(rawDataADC);
+			
+				NRF_LOG_INFO("%d", rawDataADC);
+			  NRF_LOG_FLUSH();
     }
 }
 
@@ -83,7 +92,7 @@ void initADC()
 {
     ret_code_t err_code;
     nrf_saadc_channel_config_t channel_config =
-        NRF_DRV_SAADC_DEFAULT_CHANNEL_CONFIG_SE(NRF_SAADC_INPUT_AIN2);
+        NRF_DRV_SAADC_DEFAULT_CHANNEL_CONFIG_SE(25);
 
     err_code = nrf_drv_saadc_init(NULL, readADC);
     APP_ERROR_CHECK(err_code);

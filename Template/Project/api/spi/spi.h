@@ -5,6 +5,6 @@
 #include "../sys/headerfile.h"
 
 void initSPI(void);
-void writeWhileReadSPI(void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize);
+void writeReadSPI(void* txData, size_t txLength, void* rxData, size_t rxLength);
 void writeSPI(void* pTransmitData, size_t txSize);
 void readSPI(void* pReceiveData, size_t rxSize);

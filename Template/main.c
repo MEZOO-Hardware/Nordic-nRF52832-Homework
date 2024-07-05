@@ -1,9 +1,21 @@
+//
+// Created by joey on 2024-06-18.
+//
+
+/*****************************/
+/******** include api ********/
+/*****************************/
+
 #include "Project/app/app.h"
 #include "Project/api/api.h"
 #include "Project/sys/sys.h"
 #include "Project/sys/headerfile.h"
 #include "Project/protocol/protocol.h"
 #include "Project/filter/filter.h"
+
+/****************************/
+/******** main entry ********/
+/****************************/
 
 void handerLowPowerConsumption()
 {
@@ -15,12 +27,13 @@ void handerLowPowerConsumption()
 void initPeripherals()
 {
 		initNRF52Port();
-    initUART();
+//    initUART();
+//		initComoPort();
 		initSeggerRTT();
-    initI2C();
+//    initI2C();
     initSPI();
-		initADC();
-		initPinChangeInterrupt();
+//		initADC();
+//		initPinChangeInterrupt();
 	
 		nrf_delay_ms(20);
     NRF_LOG_INFO("initPeripherals Completed");
@@ -29,7 +42,9 @@ void initPeripherals()
 
 void initSensors()
 {
-		nrf_delay_ms(50);
+//		initAD8232();
+//		initAD7171();
+		initPortOutSet(12);
     NRF_LOG_INFO("initSensors Completed");
     NRF_LOG_FLUSH();
 }
@@ -40,14 +55,21 @@ int main()
 		handerLowPowerConsumption();
 		initPeripherals();
 		initSensors();
-		initTimerInterrupt();
-  
+//		initTimerInterrupt();
+	
+	  NRF_LOG_INFO("init ALL Completed");
+    NRF_LOG_FLUSH();
+	
     while (true)
     {
-        for (int i = 0; i < LEDS_NUMBER; i++)
-        {
-            bsp_board_led_invert(i);
-            nrf_delay_ms(100);
-        }
-    } // while
+				MAX30001Info();
+			
+//				if(isAD7171ReadyPin125Hz())
+//				{
+//						AD7171();
+//						disableAD7171ReadyPin125Hz();
+//				}
+			
+//				print45byteLabView();
+		} // while
 } // main

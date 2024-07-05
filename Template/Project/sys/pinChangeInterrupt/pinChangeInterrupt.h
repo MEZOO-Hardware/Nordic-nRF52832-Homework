@@ -20,3 +20,6 @@
 #define P11					ARDUINO_0_PIN               
 
 void initPinChangeInterrupt();
+void enableAD7171ReadyPin125Hz();
+void disableAD7171ReadyPin125Hz();
+bool isAD7171ReadyPin125Hz();

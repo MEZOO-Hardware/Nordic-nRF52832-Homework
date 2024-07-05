@@ -27,10 +27,5 @@
 #define ADC_RESULT_IN_VOLTS(ADC_RESULT) ((ADC_RESULT * 0.000732421875))
 #define SAMPLES_IN_BUFFER 1
 
-static nrf_saadc_value_t     m_buffer_pool[1][SAMPLES_IN_BUFFER];
-static nrf_ppi_channel_t     m_ppi_channel;
-static uint32_t              m_adc_evt_counter;
-static uint16_t rawDataADC;
-static float resultValueADC;
-
 void initADC();
+void readADC(nrf_drv_saadc_evt_t const * p_event);

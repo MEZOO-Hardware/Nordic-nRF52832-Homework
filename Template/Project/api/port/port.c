@@ -42,11 +42,20 @@ void initNRF52Port()
     initPortOut(PORT19_LED3);
     initPortOut(PORT20_LED4);
 	
-//    initPortOutSet(PORT28_MAX30001_CS);
+    initPortOutSet(12);
+}
+
+void initComoPort()
+{
+//		initPortOutSet(28); // TP1
+//    initPortOutSet(16); // LED1
+//    initPortOutSet(17); // LED2
+//    initPortIn(15);  		// SW1
+//    initPortIn(14);  		// SW2
 }
 
 void initPowerHold()
 {
-    nrf_delay_ms(1000);
-    setPort(PORT24_NULL);
+    nrf_delay_ms(500);
+    initPortOutSet(24);
 }

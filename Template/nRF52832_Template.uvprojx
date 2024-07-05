@@ -684,6 +684,31 @@
               <FileType>5</FileType>
               <FilePath>.\Project\app\app.h</FilePath>
             </File>
+            <File>
+              <FileName>bma400.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Project\app\bma400\bma400.c</FilePath>
+            </File>
+            <File>
+              <FileName>max30205.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Project\app\max30205\max30205.c</FilePath>
+            </File>
+            <File>
+              <FileName>ad8232.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Project\app\ad8232\ad8232.c</FilePath>
+            </File>
+            <File>
+              <FileName>ad7171.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Project\app\ad7171\ad7171.c</FilePath>
+            </File>
+            <File>
+              <FileName>max30001.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Project\app\max30001\max30001.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -758,6 +783,11 @@
               <FileName>protocol.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Project\protocol\protocol.h</FilePath>
+            </File>
+            <File>
+              <FileName>printer45byte.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Project\protocol\printer45byte\printer45byte.c</FilePath>
             </File>
           </Files>
         </Group>
