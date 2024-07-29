@@ -43,11 +43,11 @@ void readADCtoAD7171()
 /****** data converter ******/
 /****************************/
 
-static int16_t adcCovData = 0;
+static uint16_t adcCovData = 0;
 
 void convADCtoAD7171()
 {
-    adcCovData = (int16_t)(((uint16_t)adcRaw[1] << 8) | adcRaw[0]);
+    adcCovData = (int16_t)(((uint16_t)adcRaw[0] << 8) | adcRaw[1]);
 }
 
 /****************************/
@@ -58,14 +58,16 @@ void initAD7171()
 {
 		setSoftResetAD7171();
 		NRF_LOG_INFO("AD7171 init Success");
+		NRF_LOG_FLUSH();
 }
 	
 void AD7171()
 {
 		readADCtoAD7171();
 		convADCtoAD7171();
-//		saveEcg(adcCovData);
+		saveEcg(adcCovData);
 
-		NRF_LOG_INFO("ADC Value = %d\n", adcCovData);
-    NRF_LOG_FLUSH();
+//		printf("%d\n", adcCovData);
+//		NRF_LOG_INFO("ADC Value = %d\n", adcCovData);
+//    NRF_LOG_FLUSH();
 }

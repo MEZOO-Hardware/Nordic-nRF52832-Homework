@@ -135,58 +135,47 @@ void saveMax30101(uint16_t RedVal, uint16_t IrVal, uint16_t GreenVal)
 static uint8_t EtcIndex = 0;
 void print45byteLabView()
 {
-		//Is printer enabled?
-    if(flag45byteLabViewPrinter) {
-				//Is all the data received? 
-        if ( 
-//						 (EcgIndex>=ECGRawSampleNum)&
-//						 (Bma400Index>=Bma400RawSampleNum)&
-//						 (Max30101Index>=Max30101RawSampleNum)
-							1
-						)
-        {			
-					
-            putchar((unsigned char) 0xFE);
-            putchar((unsigned char) 45);
+    if(flag45byteLabViewPrinter)
+		{
+				putchar((unsigned char) 0xFE);
+				putchar((unsigned char) 45);
 
-            for (int i = 0; i < ecgRawSampleNum; i++)
+				for (int i = 0; i < ecgRawSampleNum; i++)
+				{
+						putchar((unsigned char) (ecgRaw[i] >> 8)); 
+						putchar((unsigned char) (ecgRaw[i] >> 0));
+				}
+				ecgIndex = 0;
+
+
+				for (int i = 0; i < BMA400RawVarNum; i++)
+				{
+						putchar((unsigned char) (BMA400Raw[i] >> 8));
+						putchar((unsigned char) (BMA400Raw[i] >> 0));
+				}
+				BMA400Index = 0;
+
+
+				for (int i = 0; i < MAX30101RawSampleNum; i++)
+				{
+						for (int j = 0; j < MAX30101RawVarNum; j++)
 						{
-                putchar((unsigned char) (ecgRaw[i] >> 8)); 
-                putchar((unsigned char) (ecgRaw[i] >> 0));
-            }
-            ecgIndex = 0;
+								putchar((unsigned char) (MAX30101Raw[i][j] >> 8));
+								putchar((unsigned char) (MAX30101Raw[i][j] >> 0));
+						}
+				}
+				MAX30101Index = 0;
 
 
-            for (int i = 0; i < BMA400RawVarNum; i++)
-						{
-                putchar((unsigned char) (BMA400Raw[i] >> 8));
-                putchar((unsigned char) (BMA400Raw[i] >> 0));
-            }
-            BMA400Index = 0;
+				if (EtcIndex >= 4)
+				{
+						EtcIndex = 0;
+				}
+				putchar((unsigned char) EtcIndex);
+				putchar((unsigned char) (etcDataRaw[EtcIndex] >> 8));
+				putchar((unsigned char) (etcDataRaw[EtcIndex] >> 0));
+				EtcIndex++;
 
-
-            for (int i = 0; i < MAX30101RawSampleNum; i++)
-						{
-                for (int j = 0; j < MAX30101RawVarNum; j++)
-								{
-                    putchar((unsigned char) (MAX30101Raw[i][j] >> 8));
-                    putchar((unsigned char) (MAX30101Raw[i][j] >> 0));
-                }
-            }
-            MAX30101Index = 0;
-
-
-            if (EtcIndex >= 4)
-						{
-                EtcIndex = 0;
-            }
-            putchar((unsigned char) EtcIndex);
-            putchar((unsigned char) (etcDataRaw[EtcIndex] >> 8));
-            putchar((unsigned char) (etcDataRaw[EtcIndex] >> 0));
-            EtcIndex++;
-
-            disable45byteLabViewPrinter();
-				
-        }
-			}
+				disable45byteLabViewPrinter();
+		}
 }

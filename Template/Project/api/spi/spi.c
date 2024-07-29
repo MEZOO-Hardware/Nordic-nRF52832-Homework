@@ -20,9 +20,9 @@ void initSPI(void)
 		nrf_drv_spi_config_t spi_config = NRF_DRV_SPI_DEFAULT_CONFIG;
 	
 //		spi_config.ss_pin    = 28;	//SPI Sensor CS Pin
-    spi_config.miso_pin  = 28;		//comoPin_AD7171_DOUT 13, nRF52_DK Board Pin_MISO 28
-    spi_config.mosi_pin  = 29;		//nRF52_DK Board Pin_MOSI
-    spi_config.sck_pin   = 26;		//comoPin_AD7171_SCLK 12, nRF52_DK Board Pin_SCLK 26
+    spi_config.miso_pin  = 13;		//comoPin_AD7171_DOUT 13, nRF52_DK Board Pin_MISO 28
+//    spi_config.mosi_pin  = 29;		//nRF52_DK Board Pin_MOSI
+    spi_config.sck_pin   = 12;		//comoPin_AD7171_SCLK 12, nRF52_DK Board Pin_SCLK 26
 		spi_config.frequency = NRF_DRV_SPI_FREQ_1M;
 		spi_config.mode      = NRF_DRV_SPI_MODE_0;
 		spi_config.irq_priority = APP_IRQ_PRIORITY_HIGH;

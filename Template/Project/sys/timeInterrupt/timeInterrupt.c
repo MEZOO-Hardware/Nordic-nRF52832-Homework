@@ -9,7 +9,7 @@ const nrf_drv_timer_t timerSelect1 = NRF_DRV_TIMER_INSTANCE(1);
 
 void handlerTimer1(nrf_timer_event_t event_type, void* p_context)
 {
-//		enable45byteLabViewPrinter();
+		enable45byteLabViewPrinter();
 }
 
 void initTimerInterrupt()

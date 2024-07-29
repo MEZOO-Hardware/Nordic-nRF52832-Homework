@@ -40,7 +40,6 @@ void handlerBMA400(nrf_drv_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 void handlerAD7171(nrf_drv_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
 		enableAD7171ReadyPin125Hz();
-//	flag125HzRDYPinAd7171 = true;
 }
 
 void initRDYPinMAX30205()

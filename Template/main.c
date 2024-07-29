@@ -20,20 +20,20 @@
 void handerLowPowerConsumption()
 {
     nrf_pwr_mgmt_init();
-    nrf_pwr_mgmt_run();		 // initConverterMCUState
-		NRF_POWER->DCDCEN = 1; // initConverterDCDC
+    nrf_pwr_mgmt_run();					// initConverterMCUState
+		NRF_POWER->DCDCEN = 1;			// initConverterDCDC
 }
 
 void initPeripherals()
 {
-		initNRF52Port();
-//    initUART();
-//		initComoPort();
+//		initNRF52Port();
+    initUART();
+		initComoPort();
 		initSeggerRTT();
 //    initI2C();
     initSPI();
 //		initADC();
-//		initPinChangeInterrupt();
+		initPinChangeInterrupt();
 	
 		nrf_delay_ms(20);
     NRF_LOG_INFO("initPeripherals Completed");
@@ -42,34 +42,34 @@ void initPeripherals()
 
 void initSensors()
 {
-//		initAD8232();
-//		initAD7171();
-		initPortOutSet(12);
+		initAD8232();
+		initAD7171();
     NRF_LOG_INFO("initSensors Completed");
     NRF_LOG_FLUSH();
 }
 
 int main()
 {
-//		initPowerHold();	
+		nrf_delay_ms(1000);
+		initPowerHold();	
 		handerLowPowerConsumption();
 		initPeripherals();
 		initSensors();
-//		initTimerInterrupt();
+		initTimerInterrupt();
 	
 	  NRF_LOG_INFO("init ALL Completed");
     NRF_LOG_FLUSH();
 	
     while (true)
-    {
-				MAX30001Info();
+    {			
+//				idle_state_handle();
 			
-//				if(isAD7171ReadyPin125Hz())
-//				{
-//						AD7171();
-//						disableAD7171ReadyPin125Hz();
-//				}
-			
-//				print45byteLabView();
+				if(isAD7171ReadyPin125Hz())
+				{
+						AD7171();
+						disableAD7171ReadyPin125Hz();
+				}
+				
+				print45byteLabView();
 		} // while
 } // main

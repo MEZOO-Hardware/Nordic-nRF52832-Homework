@@ -15,3 +15,5 @@ enum AD7171_Resister
 
 void initAD7171();
 void AD7171();
+
+void AD7171Test();

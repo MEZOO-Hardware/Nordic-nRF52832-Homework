@@ -28,5 +28,6 @@ void initAD8232()
 	  nrf_delay_us(200);
 	
 		NRF_LOG_INFO("AD8232 init Success");
+		NRF_LOG_FLUSH();
 }
  

@@ -47,11 +47,11 @@ void initNRF52Port()
 
 void initComoPort()
 {
-//		initPortOutSet(28); // TP1
-//    initPortOutSet(16); // LED1
-//    initPortOutSet(17); // LED2
-//    initPortIn(15);  		// SW1
-//    initPortIn(14);  		// SW2
+		initPortOutSet(25); // TP1
+    initPortOutSet(18); // LED1
+    initPortOutSet(17); // LED2
+    initPortIn2(15);  		// SW1
+    initPortIn2(14);  		// SW2
 }
 
 void initPowerHold()
