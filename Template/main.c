@@ -50,11 +50,11 @@ void initSensors()
 
 int main()
 {
-		nrf_delay_ms(1000);
-		initPowerHold();	
-		handerLowPowerConsumption();
-		initPeripherals();
+		nrf_delay_ms(50);
+		initPowerHold();
+		initPeripherals();	
 		initSensors();
+		handerLowPowerConsumption();
 		initTimerInterrupt();
 	
 	  NRF_LOG_INFO("init ALL Completed");
@@ -67,9 +67,10 @@ int main()
 				if(isAD7171ReadyPin125Hz())
 				{
 						AD7171();
+						initPortToggle(28);
 						disableAD7171ReadyPin125Hz();
 				}
 				
-				print45byteLabView();
+//				print45byteLabView();
 		} // while
 } // main

@@ -65,9 +65,9 @@ void AD7171()
 {
 		readADCtoAD7171();
 		convADCtoAD7171();
-		saveEcg(adcCovData);
+//		saveEcg(adcCovData);
 
 //		printf("%d\n", adcCovData);
-//		NRF_LOG_INFO("ADC Value = %d\n", adcCovData);
-//    NRF_LOG_FLUSH();
+		NRF_LOG_INFO("ADC Value = %d\n", adcCovData);
+    NRF_LOG_FLUSH();
 }
