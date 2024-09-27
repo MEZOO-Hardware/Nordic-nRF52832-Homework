@@ -14,7 +14,7 @@ void handlerTimer1(nrf_timer_event_t event_type, void* p_context)
 
 void initTimerInterrupt()
 {
-    uint32_t time_ms = 40; 																														// Time Setting
+    uint32_t time_ms = 20; 																														// Time Setting
     uint32_t time_ticks;
     uint32_t err_code = NRF_SUCCESS;
 

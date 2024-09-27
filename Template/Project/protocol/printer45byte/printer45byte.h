@@ -1,7 +1,7 @@
 #include "../sys/headerfile.h"
 
 void saveEcgDataErrorCount(uint16_t EcgDataErrorVal);
-void saveMAC30205(uint16_t Max30205Val);
+void saveMAX30205(uint16_t Max30205Val);
 void saveEcgThres(uint16_t EcgThresVal);
 void saveMAX30101DataErrorCount(uint16_t Max30101DataErrorVal);
 void saveBMA400DataErrorCount(uint16_t Bma400DataErrorVal);

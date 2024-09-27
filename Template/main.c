@@ -26,51 +26,61 @@ void handerLowPowerConsumption()
 
 void initPeripherals()
 {
-//		initNRF52Port();
+		initNRF52Port();
     initUART();
-		initComoPort();
-		initSeggerRTT();
-//    initI2C();
-    initSPI();
+//		initComoPort();
+//		initSeggerRTT();
+    initI2C();
+//    initSPI();
 //		initADC();
 		initPinChangeInterrupt();
 	
 		nrf_delay_ms(20);
-    NRF_LOG_INFO("initPeripherals Completed");
-    NRF_LOG_FLUSH();
+//    NRF_LOG_INFO("initPeripherals Completed");
+//    NRF_LOG_FLUSH();
+	  printf("initPeripherals Completed\n");
+
 }
 
 void initSensors()
 {
-		initAD8232();
-		initAD7171();
-    NRF_LOG_INFO("initSensors Completed");
-    NRF_LOG_FLUSH();
+//		initAD8232();
+//		initAD7171();
+		initBMA456();
+//    NRF_LOG_INFO("initSensors Completed");
+//    NRF_LOG_FLUSH();
+		printf("initSensors Completed\n");
 }
 
 int main()
 {
-		nrf_delay_ms(50);
-		initPowerHold();
+//		initPowerHold();
 		initPeripherals();	
 		initSensors();
 		handerLowPowerConsumption();
 		initTimerInterrupt();
 	
-	  NRF_LOG_INFO("init ALL Completed");
-    NRF_LOG_FLUSH();
+//	  NRF_LOG_INFO("init ALL Completed");
+//    NRF_LOG_FLUSH();
+		printf("init ALL Completed\n");
 	
     while (true)
     {			
 //				idle_state_handle();
 			
-				if(isAD7171ReadyPin125Hz())
+//				if(isAD7171ReadyPin125Hz())
+//				{
+//						AD7171();
+//						initPortToggle(28);
+//						disableAD7171ReadyPin125Hz();
+//				}
+				print45byteLabView();
+			
+				if(isBMA456ReadyPin100Hz())
 				{
-						AD7171();
-						initPortToggle(28);
-						disableAD7171ReadyPin125Hz();
+						BMA456();
+						disableBMA456ReadyPin100Hz();
 				}
 				
-//				print45byteLabView();
 		} // while
 } // main

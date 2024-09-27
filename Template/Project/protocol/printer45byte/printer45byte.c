@@ -32,7 +32,7 @@ void saveEcgDataErrorCount(uint16_t ecgDataErrorVal)
     etcDataRaw[1] = ecgDataErrorVal;
 }
 
-void saveMax30205(uint16_t MAX30205Val)
+void saveMAX30205(uint16_t MAX30205Val)
 {
     etcDataRaw[2] = MAX30205Val;
 }
@@ -87,7 +87,7 @@ static uint8_t BMA400DataErrorCount = 0;
 static uint8_t BMA400Index = 0;
 static uint16_t BMA400Raw[BMA400RawVarNum] = {0, };
 
-void saveBma400(int16_t accXVal, int16_t accYVal, int16_t accZVal)
+void saveBMA400(int16_t accXVal, int16_t accYVal, int16_t accZVal)
 {
     if(BMA400Index >= BMA400RawSampleNum)
     {
@@ -114,7 +114,7 @@ static uint8_t MAX30101DataErrorCount = 0;
 static uint8_t MAX30101Index = 0;
 static uint16_t MAX30101Raw[MAX30101RawSampleNum][MAX30101RawVarNum] = {0, };
 
-void saveMax30101(uint16_t RedVal, uint16_t IrVal, uint16_t GreenVal)
+void saveMAX30101(uint16_t RedVal, uint16_t IrVal, uint16_t GreenVal)
 {
     if(MAX30101Index >= MAX30101RawSampleNum)
     {
@@ -137,13 +137,14 @@ void print45byteLabView()
 {
     if(flag45byteLabViewPrinter)
 		{
+				nrf_gpio_pin_toggle(17);
 				putchar((unsigned char) 0xFE);
 				putchar((unsigned char) 45);
 
 				for (int i = 0; i < ecgRawSampleNum; i++)
 				{
-						putchar((unsigned char) (ecgRaw[i] >> 8)); 
-						putchar((unsigned char) (ecgRaw[i] >> 0));
+						putchar((unsigned char) (1)); 
+						putchar((unsigned char) (1));
 				}
 				ecgIndex = 0;
 
@@ -160,8 +161,8 @@ void print45byteLabView()
 				{
 						for (int j = 0; j < MAX30101RawVarNum; j++)
 						{
-								putchar((unsigned char) (MAX30101Raw[i][j] >> 8));
-								putchar((unsigned char) (MAX30101Raw[i][j] >> 0));
+								putchar((unsigned char) (1)); 
+								putchar((unsigned char) (1));
 						}
 				}
 				MAX30101Index = 0;
@@ -179,3 +180,51 @@ void print45byteLabView()
 				disable45byteLabViewPrinter();
 		}
 }
+
+//static uint8_t EtcIndex = 0;
+//void print45byteLabView()
+//{
+//    if(flag45byteLabViewPrinter)
+//		{
+//				putchar((unsigned char) 0xFE);
+//				putchar((unsigned char) 45);
+
+//				for (int i = 0; i < ecgRawSampleNum; i++)
+//				{
+//						putchar((unsigned char) (ecgRaw[i] >> 8)); 
+//						putchar((unsigned char) (ecgRaw[i] >> 0));
+//				}
+//				ecgIndex = 0;
+
+
+//				for (int i = 0; i < BMA400RawVarNum; i++)
+//				{
+//						putchar((unsigned char) (BMA400Raw[i] >> 8));
+//						putchar((unsigned char) (BMA400Raw[i] >> 0));
+//				}
+//				BMA400Index = 0;
+
+
+//				for (int i = 0; i < MAX30101RawSampleNum; i++)
+//				{
+//						for (int j = 0; j < MAX30101RawVarNum; j++)
+//						{
+//								putchar((unsigned char) (MAX30101Raw[i][j] >> 8));
+//								putchar((unsigned char) (MAX30101Raw[i][j] >> 0));
+//						}
+//				}
+//				MAX30101Index = 0;
+
+
+//				if (EtcIndex >= 4)
+//				{
+//						EtcIndex = 0;
+//				}
+//				putchar((unsigned char) EtcIndex);
+//				putchar((unsigned char) (etcDataRaw[EtcIndex] >> 8));
+//				putchar((unsigned char) (etcDataRaw[EtcIndex] >> 0));
+//				EtcIndex++;
+
+//				disable45byteLabViewPrinter();
+//		}
+//}

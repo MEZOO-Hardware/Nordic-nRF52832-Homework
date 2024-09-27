@@ -25,6 +25,23 @@ bool isAD7171ReadyPin125Hz()
 		return flag125HzAD7171;
 }
 
+volatile bool flag100HzBMA456 = false;
+
+void enableBMA456ReadyPin100Hz()
+{
+		flag100HzBMA456 = true;
+}
+
+void disableBMA456ReadyPin100Hz()
+{
+		flag100HzBMA456 = false;
+}
+
+bool isBMA456ReadyPin100Hz()
+{
+		return flag100HzBMA456;
+}
+
 /****************************/
 /********* handler **********/
 /****************************/
@@ -40,6 +57,11 @@ void handlerBMA400(nrf_drv_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 void handlerAD7171(nrf_drv_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
 		enableAD7171ReadyPin125Hz();
+}
+
+void handlerBMA456(nrf_drv_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
+{
+		enableBMA456ReadyPin100Hz();
 }
 
 void initRDYPinMAX30205()
@@ -75,10 +97,23 @@ void initRDYPinAD7171()
 		nrf_drv_gpiote_in_config_t configAD7171 = NRFX_GPIOTE_CONFIG_IN_SENSE_HITOLO(true);
     configAD7171.pull = NRF_GPIO_PIN_PULLUP;
 
-    err_code = nrf_drv_gpiote_in_init(13, &configAD7171, handlerAD7171);
+    err_code = nrf_drv_gpiote_in_init(12, &configAD7171, handlerAD7171);
     APP_ERROR_CHECK(err_code);
 		
-    nrf_drv_gpiote_in_event_enable(13, true);
+    nrf_drv_gpiote_in_event_enable(12, true);
+}
+
+void initRDYPinBMA456()
+{
+		ret_code_t err_code;
+		
+		nrf_drv_gpiote_in_config_t configBMA456 = NRFX_GPIOTE_CONFIG_IN_SENSE_HITOLO(true);
+    configBMA456.pull = NRF_GPIO_PIN_PULLUP;
+
+    err_code = nrf_drv_gpiote_in_init(12, &configBMA456, handlerBMA456);
+    APP_ERROR_CHECK(err_code);
+		
+    nrf_drv_gpiote_in_event_enable(12, true);
 }
 
 void initPinChangeInterrupt()
@@ -90,5 +125,6 @@ void initPinChangeInterrupt()
 		
 //		initRDYPinMAX30205();
 //		initRDYPinBMA400();
-		initRDYPinAD7171();
+//		initRDYPinAD7171();
+		initRDYPinBMA456();
 }

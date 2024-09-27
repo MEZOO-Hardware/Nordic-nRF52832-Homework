@@ -40,4 +40,4 @@
 .\objects\nrf_log_default_backends.o: ..\nRF5_SDK\components\libraries\experimental_section_vars\nrf_section.h
 .\objects\nrf_log_default_backends.o: ..\nRF5_SDK\components\libraries\log\src\nrf_log_internal.h
 .\objects\nrf_log_default_backends.o: ..\nRF5_SDK\components\drivers_nrf\nrf_soc_nosd\nrf_error.h
-.\objects\nrf_log_default_backends.o: ..\nRF5_SDK\components\libraries\log\nrf_log_backend_rtt.h
+.\objects\nrf_log_default_backends.o: ..\nRF5_SDK\components\libraries\log\nrf_log_backend_uart.h

@@ -23,3 +23,7 @@ void initPinChangeInterrupt();
 void enableAD7171ReadyPin125Hz();
 void disableAD7171ReadyPin125Hz();
 bool isAD7171ReadyPin125Hz();
+
+void enableBMA456ReadyPin100Hz();
+void disableBMA456ReadyPin100Hz();
+bool isBMA456ReadyPin100Hz();

@@ -47,8 +47,6 @@ void initNRF52Port()
     initPortOut(PORT18_LED2);
     initPortOut(PORT19_LED3);
     initPortOut(PORT20_LED4);
-	
-    initPortOutSet(12);
 }
 
 void initComoPort()

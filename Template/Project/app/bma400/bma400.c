@@ -107,7 +107,7 @@ void printerConectCheckBMA400()
 
 static uint8_t accXYZRaw[6];
 
-void readAccXYZ()
+void readBMA456AccXYZ()
 {
 		uint8_t wrData[1] = {BMA400_AccXLSB_ADDR};
 	
@@ -122,12 +122,16 @@ static int16_t accX = 0;
 static int16_t accY = 0;
 static int16_t accZ = 0;
 
-void convAccXYZ(void)
+void convBMA456AccXYZ(void)
 {
     accX = (int16_t)(((uint16_t)accXYZRaw[1] << 8) | accXYZRaw[0]);
     accY = (int16_t)(((uint16_t)accXYZRaw[3] << 8) | accXYZRaw[2]);
     accZ = (int16_t)(((uint16_t)accXYZRaw[5] << 8) | accXYZRaw[4]);
-
+    
+		accX &= 0xFFFF;
+    accY &= 0xFFFF;
+    accZ &= 0xFFFF;
+	
     if(accX > 2047) accX = (accX - 4096);
     if(accY > 2047) accY = (accY - 4096);
     if(accZ > 2047) accZ = (accZ - 4096);
@@ -155,7 +159,7 @@ void initBMA400()
 
 void BMA400()
 {
-    readAccXYZ();
-    convAccXYZ();
+    readBMA456AccXYZ();
+    convBMA456AccXYZ();
 //    saveBMA400(accX accY, accZ);
 }

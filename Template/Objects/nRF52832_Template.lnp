@@ -56,6 +56,7 @@
 ".\objects\ad8232.o"
 ".\objects\ad7171.o"
 ".\objects\max30001.o"
+".\objects\bma456.o"
 ".\objects\i2c.o"
 ".\objects\spi.o"
 ".\objects\uart.o"
