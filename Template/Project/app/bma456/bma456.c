@@ -27,8 +27,8 @@ void writeBMA456(uint8_t *w_data, uint32_t w_length)
 void setSoftResetBMA456()
 {
 	uint8_t config[2];
-	config[0] = (0x7E);
-	config[1] = (0xB6);
+	config[0] = 0x7E;
+	config[1] = (0xb6);
 	
 	writeBMA456(&config[0], sizeof(config));
 }
@@ -36,7 +36,7 @@ void setSoftResetBMA456()
 void setAccConf()
 {
 	uint8_t config[2];
-	config[0] = (0x40);
+	config[0] = 0x40;
 	config[1] = (0xA8); 	
 
 	writeBMA456(&config[0], sizeof(config));
@@ -45,7 +45,7 @@ void setAccConf()
 void setPwrCrtl()
 {
 	uint8_t config[2];
-	config[0] = (0x7D);
+	config[0] = 0x7D;
 	config[1] = (0x04); 	
 
 	writeBMA456(&config[0], sizeof(config));
@@ -54,7 +54,7 @@ void setPwrCrtl()
 void setAccRange()
 {
 	uint8_t config[2];
-	config[0] = (0x41);
+	config[0] = 0x41;
 	config[1] = (0x00);
 
 	writeBMA456(&config[0], sizeof(config));
@@ -63,7 +63,7 @@ void setAccRange()
 void setInt2ToCtrl()
 {
 	uint8_t config[2];
-	config[0] = (0x54);
+	config[0] = 0x54;
 	config[1] = (0x08);
 
 	writeBMA456(&config[0], sizeof(config));
@@ -72,7 +72,7 @@ void setInt2ToCtrl()
 void setIntMapData()
 {
 	uint8_t config[2];
-	config[0] = (0x58);
+	config[0] = 0x58;
 	config[1] = (0x40);
 
 	writeBMA456(&config[0], sizeof(config));
@@ -106,6 +106,8 @@ void printerConectCheckBMA456()
     }
 }
 
+
+
 /****************************/
 /******** data read *********/
 /****************************/
@@ -133,14 +135,18 @@ void convAccXYZ(void)
     accY = (int16_t)(((uint16_t)accXYZRaw[3] << 8) | accXYZRaw[2]);
     accZ = (int16_t)(((uint16_t)accXYZRaw[5] << 8) | accXYZRaw[4]);
 
+    accX &= 0xFFFF;
+    accY &= 0xFFFF;
+    accZ &= 0xFFFF;
+
     if (accX > 32767) accX -= 65536;  
     if (accY > 32767) accY -= 65536;
     if (accZ > 32767) accZ -= 65536;
 }
 
-/****************************/
-/********** bma456 **********/
-/****************************/
+///****************************/
+///********** bma456 **********/
+///****************************/
 
 void initBMA456()
 {
