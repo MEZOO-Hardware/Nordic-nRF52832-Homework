@@ -74,6 +74,7 @@ int main()
 //						initPortToggle(28);
 //						disableAD7171ReadyPin125Hz();
 //				}
+			
 				print45byteLabView();
 			
 				if(isBMA456ReadyPin100Hz())
