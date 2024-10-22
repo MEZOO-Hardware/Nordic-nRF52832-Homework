@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\nRF52832_Template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\nRF52832_Template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Sep 27 14:55:38 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Oct 07 15:05:23 2024
 <BR><P>
 <H3>Maximum Stack Usage =        352 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -21,7 +21,7 @@ Mutually Recursive functions
  <LI><a href="#[a]">PendSV_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[a]">PendSV_Handler</a><BR>
  <LI><a href="#[b]">SysTick_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[b]">SysTick_Handler</a><BR>
  <LI><a href="#[1b]">CCM_AAR_IRQHandler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1b]">CCM_AAR_IRQHandler</a><BR>
- <LI><a href="#[79]">nrf_log_frontend_dequeue</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[7a]">nrf_log_frontend_std_0</a><BR>
+ <LI><a href="#[6a]">nrf_log_frontend_dequeue</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[7a]">nrf_log_frontend_std_0</a><BR>
  <LI><a href="#[95]">buffer_add</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[95]">buffer_add</a><BR>
 </UL>
 <P>
@@ -452,7 +452,6 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSensors
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPeripherals
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printerConectCheckBMA456
 </UL>
 
 <P><STRONG><a name="[5d]"></a>putc</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, putc.o(.text))
@@ -484,7 +483,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initUART
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_xfer
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_uart_init
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_twim_rx
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
@@ -589,10 +588,11 @@ Global Symbols
 
 <P><STRONG><a name="[15a]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[66]"></a>BMA456</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, bma456.o(i.BMA456))
+<P><STRONG><a name="[66]"></a>BMA456</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, bma456.o(i.BMA456))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = BMA456 &rArr; readAccXYZ &rArr; writeReadBMA456 &rArr; writeReadI2C &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;saveBMA400
+<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_std_3
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readAccXYZ
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convAccXYZ
 </UL>
@@ -602,10 +602,10 @@ Global Symbols
 <P><STRONG><a name="[12]"></a>GPIOTE_IRQHandler</STRONG> (Thumb, 154 bytes, Stack size 32 bytes, nrfx_gpiote.o(i.GPIOTE_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = GPIOTE_IRQHandler &rArr; port_event_handle &rArr; nrf_gpio_latches_read_and_clear
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpiote_event_is_set
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpiote_event_clear
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_latches_read_and_clear
+<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpiote_event_is_set
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpiote_event_clear
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_latches_read_and_clear
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf52.o(RESET)
 </UL>
@@ -618,16 +618,16 @@ Global Symbols
 <P><STRONG><a name="[13]"></a>SAADC_IRQHandler</STRONG> (Thumb, 320 bytes, Stack size 40 bytes, nrfx_saadc.o(i.SAADC_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SAADC_IRQHandler &rArr; nrf_saadc_event_clear
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_saadc_event_clear
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_saadc_event_check
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_saadc_buffer_init
+<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_saadc_event_clear
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_saadc_event_check
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_saadc_buffer_init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf52.o(RESET)
 </UL>
 <P><STRONG><a name="[f]"></a>SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, nrfx_twim.o(i.SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler &rArr; twim_irq_handler &rArr; xfer_completeness_check
 </UL>
-<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> nrfx_twim.o(.constdata)
 <LI> arm_startup_nrf52.o(RESET)
@@ -635,56 +635,56 @@ Global Symbols
 <P><STRONG><a name="[10]"></a>SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, nrfx_spim.o(i.SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_spim_event_check
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_set
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_clear
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_spim_event_check
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_set
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_clear
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf52.o(RESET)
 </UL>
 <P><STRONG><a name="[31]"></a>SystemInit</STRONG> (Thumb, 660 bytes, Stack size 20 bytes, system_nrf52.o(i.SystemInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = SystemInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvmc_config
+<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvmc_config
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf52.o(.text)
 </UL>
 <P><STRONG><a name="[15]"></a>TIMER1_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrfx_timer.o(i.TIMER1_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TIMER1_IRQHandler &rArr; irq_handler &rArr; nrf_timer_event_clear
 </UL>
-<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf52.o(RESET)
 </UL>
 <P><STRONG><a name="[16]"></a>TIMER2_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrfx_timer.o(i.TIMER2_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TIMER2_IRQHandler &rArr; irq_handler &rArr; nrf_timer_event_clear
 </UL>
-<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf52.o(RESET)
 </UL>
 <P><STRONG><a name="[26]"></a>TIMER3_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrfx_timer.o(i.TIMER3_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TIMER3_IRQHandler &rArr; irq_handler &rArr; nrf_timer_event_clear
 </UL>
-<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf52.o(RESET)
 </UL>
 <P><STRONG><a name="[27]"></a>TIMER4_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrfx_timer.o(i.TIMER4_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TIMER4_IRQHandler &rArr; irq_handler &rArr; nrf_timer_event_clear
 </UL>
-<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf52.o(RESET)
 </UL>
 <P><STRONG><a name="[e]"></a>UARTE0_UART0_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, nrfx_prs.o(i.UARTE0_UART0_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf52.o(RESET)
 </UL>
-<P><STRONG><a name="[77]"></a>app_error_fault_handler</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, app_error_weak.o(i.app_error_fault_handler))
+<P><STRONG><a name="[78]"></a>app_error_fault_handler</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, app_error_weak.o(i.app_error_fault_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_panic
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_panic
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_std_0
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler_bare
 </UL>
@@ -692,7 +692,7 @@ Global Symbols
 <P><STRONG><a name="[7b]"></a>app_error_handler_bare</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, app_error.o(i.app_error_handler_bare))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_fault_handler
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_fault_handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initUART
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTimerInterrupt
@@ -759,7 +759,7 @@ Global Symbols
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_free
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_alloc
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buf_prealloc
 </UL>
 
@@ -770,7 +770,7 @@ Global Symbols
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_free
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_alloc
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buf_prealloc
 </UL>
 
@@ -783,7 +783,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[ed]"></a>buffer_is_empty</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, nrf_log_frontend.o(i.buffer_is_empty))
-<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 </UL>
 
 <P><STRONG><a name="[68]"></a>convAccXYZ</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, bma456.o(i.convAccXYZ))
@@ -827,7 +827,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> timeinterrupt.o(i.initTimerInterrupt)
 </UL>
 <P><STRONG><a name="[9d]"></a>initBMA456</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, bma456.o(i.initBMA456))
-<BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = initBMA456 &rArr; printerConectCheckBMA456 &rArr; writeReadI2C &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = initBMA456 &rArr; printerConectCheckBMA456 &rArr; writeReadI2C &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setSoftResetBMA456
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setPwrCrtl
@@ -887,7 +887,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[b2]"></a>initSensors</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, main.o(i.initSensors))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = initSensors &rArr; initBMA456 &rArr; printerConectCheckBMA456 &rArr; writeReadI2C &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = initSensors &rArr; initBMA456 &rArr; printerConectCheckBMA456 &rArr; writeReadI2C &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initBMA456
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
@@ -1084,7 +1084,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prefix_process
 </UL>
 
-<P><STRONG><a name="[79]"></a>nrf_log_frontend_dequeue</STRONG> (Thumb, 518 bytes, Stack size 48 bytes, nrf_log_frontend.o(i.nrf_log_frontend_dequeue))
+<P><STRONG><a name="[6a]"></a>nrf_log_frontend_dequeue</STRONG> (Thumb, 518 bytes, Stack size 48 bytes, nrf_log_frontend.o(i.nrf_log_frontend_dequeue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112 + In Cycle
 <LI>Call Chain = nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
@@ -1098,8 +1098,10 @@ Global Symbols
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buffer_is_empty
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;invalid_packets_omit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_fault_handler
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMA456
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_fault_handler
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std_n
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printerConectCheckBMA456
 </UL>
 
 <P><STRONG><a name="[7a]"></a>nrf_log_frontend_std_0</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, nrf_log_frontend.o(i.nrf_log_frontend_std_0))
@@ -1107,8 +1109,17 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std_n
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_fault_handler
+<BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_fault_handler
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printerConectCheckBMA456
+</UL>
+
+<P><STRONG><a name="[69]"></a>nrf_log_frontend_std_3</STRONG> (Thumb, 18 bytes, Stack size 24 bytes, nrf_log_frontend.o(i.nrf_log_frontend_std_3))
+<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = nrf_log_frontend_std_3 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std_n
+</UL>
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMA456
 </UL>
 
 <P><STRONG><a name="[e8]"></a>nrf_log_hexdump_entry_process</STRONG> (Thumb, 150 bytes, Stack size 32 bytes, nrf_log_str_formatter.o(i.nrf_log_hexdump_entry_process))
@@ -1134,10 +1145,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prefix_process
 </UL>
 
-<P><STRONG><a name="[78]"></a>nrf_log_panic</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, nrf_log_frontend.o(i.nrf_log_panic))
+<P><STRONG><a name="[79]"></a>nrf_log_panic</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, nrf_log_frontend.o(i.nrf_log_panic))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = nrf_log_panic
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_fault_handler
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_fault_handler
 </UL>
 
 <P><STRONG><a name="[e7]"></a>nrf_log_std_entry_process</STRONG> (Thumb, 182 bytes, Stack size 48 bytes, nrf_log_str_formatter.o(i.nrf_log_std_entry_process))
@@ -1156,7 +1167,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_memobj_free
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_alloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 </UL>
 
 <P><STRONG><a name="[f4]"></a>nrf_memobj_free</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, nrf_memobj.o(i.nrf_memobj_free))
@@ -1173,7 +1184,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_atomic_u32_add
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_backend_serial_put
 </UL>
 
@@ -1183,7 +1194,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_memobj_free
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_atomic_u32_sub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_backend_serial_put
 </UL>
 
@@ -1200,7 +1211,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memobj_op
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 </UL>
 
 <P><STRONG><a name="[9a]"></a>nrf_pwr_mgmt_init</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_init))
@@ -1228,7 +1239,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_handler_polarity_get
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pin_in_use_by_te
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pin_in_use_by_port
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpiote_event_clear
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpiote_event_clear
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_cfg_sense_set
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;channel_port_get
 </UL>
@@ -1246,7 +1257,7 @@ Global Symbols
 <P><STRONG><a name="[ae]"></a>nrfx_gpiote_init</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, nrfx_gpiote.o(i.nrfx_gpiote_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = nrfx_gpiote_init &rArr; nrf_gpiote_event_clear
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpiote_event_clear
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpiote_event_clear
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_present_check
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;channel_free
 </UL>
@@ -1451,7 +1462,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_backend_uart_panic_set
 </UL>
 
-<P><STRONG><a name="[75]"></a>nvmc_config</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, system_nrf52.o(i.nvmc_config))
+<P><STRONG><a name="[76]"></a>nvmc_config</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, system_nrf52.o(i.nvmc_config))
 <BR><BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
@@ -1463,12 +1474,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a5]"></a>printerConectCheckBMA456</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, bma456.o(i.printerConectCheckBMA456))
-<BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = printerConectCheckBMA456 &rArr; writeReadI2C &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
+<P><STRONG><a name="[a5]"></a>printerConectCheckBMA456</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, bma456.o(i.printerConectCheckBMA456))
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = printerConectCheckBMA456 &rArr; writeReadI2C &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler_bare
+<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_std_0
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler_bare
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeReadI2C
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initBMA456
 </UL>
@@ -1477,12 +1489,6 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = readAccXYZ &rArr; writeReadBMA456 &rArr; writeReadI2C &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeReadBMA456
-</UL>
-<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMA456
-</UL>
-
-<P><STRONG><a name="[69]"></a>saveBMA400</STRONG> (Thumb, 38 bytes, Stack size 12 bytes, printer45byte.o(i.saveBMA400))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = saveBMA400
 </UL>
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMA456
 </UL>
@@ -1612,12 +1618,12 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[f7]"></a>channel_port_get</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrfx_gpiote.o(i.channel_port_get))
-<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
+<BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_gpiote_in_event_enable
 </UL>
 
 <P><STRONG><a name="[111]"></a>nrf_bitmask_bit_is_set</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, nrfx_gpiote.o(i.nrf_bitmask_bit_is_set))
-<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
+<BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
 </UL>
 
 <P><STRONG><a name="[fc]"></a>nrf_gpio_cfg</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, nrfx_gpiote.o(i.nrf_gpio_cfg), UNUSED)
@@ -1625,14 +1631,14 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[f9]"></a>nrf_gpio_cfg_sense_set</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, nrfx_gpiote.o(i.nrf_gpio_cfg_sense_set))
-<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
+<BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_gpiote_in_event_enable
 </UL>
 
-<P><STRONG><a name="[6c]"></a>nrf_gpio_latches_read_and_clear</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, nrfx_gpiote.o(i.nrf_gpio_latches_read_and_clear))
+<P><STRONG><a name="[6d]"></a>nrf_gpio_latches_read_and_clear</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, nrfx_gpiote.o(i.nrf_gpio_latches_read_and_clear))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = nrf_gpio_latches_read_and_clear
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
+<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
 <LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTE_IRQHandler
 </UL>
 
@@ -1640,7 +1646,7 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_gpiote_init
 </UL>
 
-<P><STRONG><a name="[6b]"></a>nrf_gpiote_event_clear</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, nrfx_gpiote.o(i.nrf_gpiote_event_clear))
+<P><STRONG><a name="[6c]"></a>nrf_gpiote_event_clear</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, nrfx_gpiote.o(i.nrf_gpiote_event_clear))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = nrf_gpiote_event_clear
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_gpiote_init
@@ -1648,7 +1654,7 @@ Local Symbols
 <LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTE_IRQHandler
 </UL>
 
-<P><STRONG><a name="[6a]"></a>nrf_gpiote_event_is_set</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, nrfx_gpiote.o(i.nrf_gpiote_event_is_set))
+<P><STRONG><a name="[6b]"></a>nrf_gpiote_event_is_set</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, nrfx_gpiote.o(i.nrf_gpiote_event_is_set))
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTE_IRQHandler
 </UL>
 
@@ -1664,11 +1670,11 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_gpiote_in_event_enable
 </UL>
 
-<P><STRONG><a name="[6d]"></a>port_event_handle</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, nrfx_gpiote.o(i.port_event_handle))
+<P><STRONG><a name="[6e]"></a>port_event_handle</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, nrfx_gpiote.o(i.port_event_handle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = port_event_handle &rArr; nrf_gpio_latches_read_and_clear
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_handler_polarity_get
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_latches_read_and_clear
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_latches_read_and_clear
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_cfg_sense_set
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_bitmask_bit_is_set
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;channel_port_get
@@ -1677,11 +1683,11 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[f8]"></a>port_handler_polarity_get</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, nrfx_gpiote.o(i.port_handler_polarity_get))
-<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
+<BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;port_event_handle
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_gpiote_in_event_enable
 </UL>
 
-<P><STRONG><a name="[76]"></a>irq_handler</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, nrfx_timer.o(i.irq_handler))
+<P><STRONG><a name="[77]"></a>irq_handler</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, nrfx_timer.o(i.irq_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = irq_handler &rArr; nrf_timer_event_clear
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_timer_event_clear
@@ -1697,7 +1703,7 @@ Local Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_timer_init
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_timer_compare
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
 </UL>
 
 <P><STRONG><a name="[117]"></a>nrf_gpio_pin_set</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, nrf_drv_twi.o(i.nrf_gpio_pin_set))
@@ -1733,7 +1739,7 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> nrf_drv_uart.o(i.nrf_drv_uart_init)
 </UL>
 <P><STRONG><a name="[11c]"></a>_NRFX_IRQ_PENDING_CLEAR</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, nrfx_twim.o(i._NRFX_IRQ_PENDING_CLEAR))
-<BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
+<BR><BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
 </UL>
 
 <P><STRONG><a name="[104]"></a>nrf_gpio_cfg</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, nrfx_twim.o(i.nrf_gpio_cfg))
@@ -1744,21 +1750,21 @@ Local Symbols
 
 <P><STRONG><a name="[119]"></a>nrf_twim_event_check</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrfx_twim.o(i.nrf_twim_event_check))
 <BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_xfer
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
 </UL>
 
 <P><STRONG><a name="[11a]"></a>nrf_twim_event_clear</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, nrfx_twim.o(i.nrf_twim_event_clear))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = nrf_twim_event_clear
 </UL>
 <BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_xfer
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
 </UL>
 
 <P><STRONG><a name="[11d]"></a>nrfx_is_in_ram</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, nrfx_twim.o(i.nrfx_is_in_ram))
 <BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_xfer
 </UL>
 
-<P><STRONG><a name="[71]"></a>twim_irq_handler</STRONG> (Thumb, 400 bytes, Stack size 64 bytes, nrfx_twim.o(i.twim_irq_handler))
+<P><STRONG><a name="[72]"></a>twim_irq_handler</STRONG> (Thumb, 400 bytes, Stack size 64 bytes, nrfx_twim.o(i.twim_irq_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = twim_irq_handler &rArr; xfer_completeness_check
 </UL>
 <BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xfer_completeness_check
@@ -1786,7 +1792,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = xfer_completeness_check
 </UL>
 <BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_xfer
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;twim_irq_handler
 </UL>
 
 <P><STRONG><a name="[8c]"></a>apply_config</STRONG> (Thumb, 136 bytes, Stack size 24 bytes, nrfx_uarte.o(i.apply_config))
@@ -2003,29 +2009,29 @@ Local Symbols
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
 </UL>
 
-<P><STRONG><a name="[70]"></a>nrf_saadc_buffer_init</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrfx_saadc.o(i.nrf_saadc_buffer_init))
+<P><STRONG><a name="[71]"></a>nrf_saadc_buffer_init</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrfx_saadc.o(i.nrf_saadc_buffer_init))
 <BR><BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SAADC_IRQHandler
 </UL>
 
-<P><STRONG><a name="[6e]"></a>nrf_saadc_event_check</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, nrfx_saadc.o(i.nrf_saadc_event_check))
+<P><STRONG><a name="[6f]"></a>nrf_saadc_event_check</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, nrfx_saadc.o(i.nrf_saadc_event_check))
 <BR><BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SAADC_IRQHandler
 </UL>
 
-<P><STRONG><a name="[6f]"></a>nrf_saadc_event_clear</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, nrfx_saadc.o(i.nrf_saadc_event_clear))
+<P><STRONG><a name="[70]"></a>nrf_saadc_event_clear</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, nrfx_saadc.o(i.nrf_saadc_event_clear))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = nrf_saadc_event_clear
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SAADC_IRQHandler
 </UL>
 
-<P><STRONG><a name="[73]"></a>nrf_gpio_pin_clear</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrf_gpio_pin_clear))
+<P><STRONG><a name="[74]"></a>nrf_gpio_pin_clear</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrf_gpio_pin_clear))
 <BR><BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[74]"></a>nrf_gpio_pin_set</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrf_gpio_pin_set))
+<P><STRONG><a name="[75]"></a>nrf_gpio_pin_set</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrf_gpio_pin_set))
 <BR><BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[72]"></a>nrf_spim_event_check</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrf_spim_event_check))
+<P><STRONG><a name="[73]"></a>nrf_spim_event_check</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrf_spim_event_check))
 <BR><BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
 </UL>
 
@@ -2168,7 +2174,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[be]"></a>invalid_packets_omit</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, nrf_log_frontend.o(i.invalid_packets_omit))
-<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;log_skip
 </UL>
 
@@ -2193,12 +2199,13 @@ Local Symbols
 <P><STRONG><a name="[f0]"></a>std_n</STRONG> (Thumb, 144 bytes, Stack size 40 bytes, nrf_log_frontend.o(i.std_n))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;log_pending_hook
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dropped_sat16_get
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buf_prealloc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_std_0
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_std_3
 </UL>
 
 <P><STRONG><a name="[f2]"></a>postfix_process</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, nrf_log_str_formatter.o(i.postfix_process))

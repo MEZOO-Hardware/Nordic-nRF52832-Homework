@@ -12,12 +12,12 @@ static volatile bool m_xfer_done = false;
 
 void writeReadBMA456(uint8_t *w_data, uint32_t w_length, uint8_t *r_data, uint32_t r_length)
 {
-		writeReadI2C(0x19, w_data, w_length, r_data, r_length);
+		writeReadI2C(BMA456_ADRR, w_data, w_length, r_data, r_length);
 }
 
 void writeBMA456(uint8_t *w_data, uint32_t w_length)
 {
-		writeI2C(0x19, w_data, w_length);
+		writeI2C(BMA456_ADRR, w_data, w_length);
 }
 
 /****************************/
@@ -28,7 +28,7 @@ void setSoftResetBMA456()
 {
 	uint8_t config[2];
 	config[0] = 0x7E;
-	config[1] = (0xb6);
+	config[1] = (0xB6);
 	
 	writeBMA456(&config[0], sizeof(config));
 }
@@ -89,20 +89,20 @@ void printerConectCheckBMA456()
     uint8_t rdData;
 		uint8_t wrData[1] = {0x16}; 
 		
-		err_code = writeReadI2C(0x19, wrData, sizeof(wrData), &rdData, sizeof(rdData));
+		err_code = writeReadI2C(BMA456_ADRR, wrData, sizeof(wrData), &rdData, sizeof(rdData));
     APP_ERROR_CHECK(err_code);
 
     if (err_code == 0x00)
     {
-//			NRF_LOG_INFO("BMA456 init Success");
-//			NRF_LOG_FLUSH();
-				printf("BMA456 init Success\n");	
+			NRF_LOG_INFO("BMA456 init Success");
+			NRF_LOG_FLUSH();
+//			printf("BMA456 init Success\n");	
     }
     else
     {
-//    	NRF_LOG_INFO("BMA456 init Fail");
-//			NRF_LOG_FLUSH();
-				printf("BMA456 init Fail\n");
+    	NRF_LOG_INFO("BMA456 init Fail");
+			NRF_LOG_FLUSH();
+//			printf("BMA456 init Fail\n");
     }
 }
 
@@ -135,18 +135,14 @@ void convAccXYZ(void)
     accY = (int16_t)(((uint16_t)accXYZRaw[3] << 8) | accXYZRaw[2]);
     accZ = (int16_t)(((uint16_t)accXYZRaw[5] << 8) | accXYZRaw[4]);
 
-    accX &= 0xFFFF;
-    accY &= 0xFFFF;
-    accZ &= 0xFFFF;
-
     if (accX > 32767) accX -= 65536;  
     if (accY > 32767) accY -= 65536;
     if (accZ > 32767) accZ -= 65536;
 }
 
-///****************************/
-///********** bma456 **********/
-///****************************/
+/****************************/
+/********** bma456 **********/
+/****************************/
 
 void initBMA456()
 {
@@ -171,7 +167,7 @@ void BMA456()
     readAccXYZ();
     convAccXYZ();
 
-//		NRF_LOG_INFO("X:%d Y:%d Z:%d", accX, accY, accZ);
-//		NRF_LOG_FLUSH();
-    saveBMA400(accX, accY, accZ);
+		NRF_LOG_INFO("X:%d Y:%d Z:%d", accX, accY, accZ);
+		NRF_LOG_FLUSH();
+//    saveBMA400(accX, accY, accZ);
 }

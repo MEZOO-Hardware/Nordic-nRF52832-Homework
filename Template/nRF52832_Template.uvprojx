@@ -714,11 +714,6 @@
               <FileType>1</FileType>
               <FilePath>.\Project\app\bma456\bma456.c</FilePath>
             </File>
-            <File>
-              <FileName>bma456.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Project\app\bma456\bma456.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
