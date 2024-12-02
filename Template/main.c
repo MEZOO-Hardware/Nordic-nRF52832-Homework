@@ -26,12 +26,12 @@ void handerLowPowerConsumption()
 
 void initPeripherals()
 {
-		initNRF52Port();
+//		initNRF52Port();
     initUART();
-//		initComoPort();
+		initComoPort();
 //		initSeggerRTT();
-    initI2C();
-//    initSPI();
+//    initI2C();
+    initSPI();
 //		initADC();
 		initPinChangeInterrupt();
 	
@@ -44,9 +44,9 @@ void initPeripherals()
 
 void initSensors()
 {
-//		initAD8232();
-//		initAD7171();
-		initBMA456();
+		initAD8232();
+		initAD7171();
+//		initBMA456();
 //    NRF_LOG_INFO("initSensors Completed");
 //    NRF_LOG_FLUSH();
 		printf("initSensors Completed\n");
@@ -54,7 +54,7 @@ void initSensors()
 
 int main()
 {
-//		initPowerHold();
+		initPowerHold();
 		initPeripherals();	
 		initSensors();
 		handerLowPowerConsumption();
@@ -68,19 +68,20 @@ int main()
     {			
 //				idle_state_handle();
 			
-//				if(isAD7171ReadyPin125Hz())
-//				{
-//						AD7171();
-//						initPortToggle(28);
-//						disableAD7171ReadyPin125Hz();
-//				}
 				print45byteLabView();
 			
-				if(isBMA456ReadyPin100Hz())
+				if(isAD7171ReadyPin125Hz())
 				{
-						BMA456();
-						disableBMA456ReadyPin100Hz();
+						AD7171();
+						initPortToggle(28);
+						disableAD7171ReadyPin125Hz();
 				}
+
+//				if(isBMA456ReadyPin100Hz())
+//				{
+//						BMA456();
+//						disableBMA456ReadyPin100Hz();
+//				}
 				
 		} // while
 } // main

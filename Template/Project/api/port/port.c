@@ -57,12 +57,15 @@ void initComoPort()
 		initPortIn2(18);			// AD8232 LDO+
 		initPortIn2(20);			// AD8232 LDO-
 	
-//    initPortIn2(15);  		// SW1
-//    initPortIn2(14);  		// SW2
+    initPortIn2(15);  		// SW1
+    initPortIn2(14);  		// SW2
+	    
+
 }
 
 void initPowerHold()
 {
     nrf_delay_ms(10);
+	  initPortOutSet(23);   // AVCC_EN
     initPortOutSet(24);
 }

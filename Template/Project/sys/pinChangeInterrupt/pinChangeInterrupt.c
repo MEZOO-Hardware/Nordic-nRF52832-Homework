@@ -97,10 +97,10 @@ void initRDYPinAD7171()
 		nrf_drv_gpiote_in_config_t configAD7171 = NRFX_GPIOTE_CONFIG_IN_SENSE_HITOLO(true);
     configAD7171.pull = NRF_GPIO_PIN_PULLUP;
 
-    err_code = nrf_drv_gpiote_in_init(12, &configAD7171, handlerAD7171);
+    err_code = nrf_drv_gpiote_in_init(13, &configAD7171, handlerAD7171);
     APP_ERROR_CHECK(err_code);
 		
-    nrf_drv_gpiote_in_event_enable(12, true);
+    nrf_drv_gpiote_in_event_enable(13, true);
 }
 
 void initRDYPinBMA456()
@@ -125,6 +125,6 @@ void initPinChangeInterrupt()
 		
 //		initRDYPinMAX30205();
 //		initRDYPinBMA400();
-//		initRDYPinAD7171();
-		initRDYPinBMA456();
+		initRDYPinAD7171();
+//		initRDYPinBMA456();
 }

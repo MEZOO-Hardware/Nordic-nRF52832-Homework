@@ -56,7 +56,7 @@ void saveBMA400DataErrorCount(uint16_t BMA400DataErrorVal)
 /******** set ecg data ******/
 /****************************/
 
-#define ecgRawSampleNum     5			
+#define ecgRawSampleNum     1			
 #define ecgRawVarNum				1
 static uint16_t ecgErrorCount = 0;
 static uint8_t ecgIndex = 0;
@@ -75,6 +75,90 @@ void saveEcg(uint16_t EcgVal)
     }
 
     ecgIndex++;
+}
+
+#define ecgRawSampleNum2     1			
+#define ecgRawVarNum2				1
+static uint16_t ecgErrorCount2 = 0;
+static uint8_t ecgIndex2 = 0;
+static uint16_t ecgRaw2[ecgRawVarNum2] = {0, };
+
+void saveEcg2(uint16_t EcgVal2)
+{
+    if(ecgIndex2 >= ecgRawSampleNum2)
+    {
+        ecgErrorCount2++;
+//        saveEcgDataErrorCount2(ecgErrorCount2);
+    }
+		else
+		{
+        ecgRaw2[ecgIndex2] = EcgVal2;
+    }
+
+    ecgIndex2++;
+}
+
+#define ecgRawSampleNum3     1			
+#define ecgRawVarNum3				1
+static uint16_t ecgErrorCount3 = 0;
+static uint8_t ecgIndex3 = 0;
+static uint16_t ecgRaw3[ecgRawVarNum3] = {0, };
+
+void saveEcg3(uint16_t EcgVal3)
+{
+    if(ecgIndex3 >= ecgRawSampleNum3)
+    {
+        ecgErrorCount3++;
+//        saveEcgDataErrorCount3(ecgErrorCount3);
+    }
+		else
+		{
+        ecgRaw3[ecgIndex3] = EcgVal3;
+    }
+
+    ecgIndex3++;
+}
+
+#define ecgRawSampleNum4     1			
+#define ecgRawVarNum4				1
+static uint16_t ecgErrorCount4 = 0;
+static uint8_t ecgIndex4 = 0;
+static uint16_t ecgRaw4[ecgRawVarNum4] = {0, };
+
+void saveEcg4(uint16_t EcgVal4)
+{
+    if(ecgIndex4 >= ecgRawSampleNum4)
+    {
+        ecgErrorCount4++;
+//        saveEcgDataErrorCount4(ecgErrorCount4);
+    }
+		else
+		{
+        ecgRaw4[ecgIndex4] = EcgVal4;
+    }
+
+    ecgIndex4++;
+}
+
+#define ecgRawSampleNum5     1			
+#define ecgRawVarNum5				1
+static uint16_t ecgErrorCount5 = 0;
+static uint8_t ecgIndex5 = 0;
+static uint16_t ecgRaw5[ecgRawVarNum5] = {0, };
+
+void saveEcg5(uint16_t EcgVal5)
+{
+    if(ecgIndex5 >= ecgRawSampleNum5)
+    {
+        ecgErrorCount5++;
+//        saveEcgDataErrorCount5(ecgErrorCount5);
+    }
+		else
+		{
+        ecgRaw5[ecgIndex5] = EcgVal5;
+    }
+
+    ecgIndex5++;
 }
 
 /****************************/
@@ -139,44 +223,43 @@ void print45byteLabView()
 		{
 				nrf_gpio_pin_toggle(17);
 				putchar((unsigned char) 0xFE);
-				putchar((unsigned char) 45);
+				putchar((unsigned char) 50);
 
 				for (int i = 0; i < ecgRawSampleNum; i++)
 				{
-						putchar((unsigned char) (1)); 
-						putchar((unsigned char) (1));
+						putchar((unsigned char) (ecgRaw[i] >> 8)); 
+						putchar((unsigned char) (ecgRaw[i] >> 0));
 				}
 				ecgIndex = 0;
-
-
-				for (int i = 0; i < BMA400RawVarNum; i++)
+				
+				for (int i = 0; i < ecgRawSampleNum2; i++)
 				{
-						putchar((unsigned char) (BMA400Raw[i] >> 8));
-						putchar((unsigned char) (BMA400Raw[i] >> 0));
+						putchar((unsigned char) (ecgRaw2[i] >> 8)); 
+						putchar((unsigned char) (ecgRaw2[i] >> 0));
 				}
-				BMA400Index = 0;
-
-
-				for (int i = 0; i < MAX30101RawSampleNum; i++)
+				ecgIndex2 = 0;
+				
+				for (int i = 0; i < ecgRawSampleNum3; i++)
 				{
-						for (int j = 0; j < MAX30101RawVarNum; j++)
-						{
-								putchar((unsigned char) (1)); 
-								putchar((unsigned char) (1));
-						}
+						putchar((unsigned char) (ecgRaw3[i] >> 8)); 
+						putchar((unsigned char) (ecgRaw3[i] >> 0));
 				}
-				MAX30101Index = 0;
-
-
-				if (EtcIndex >= 4)
+				ecgIndex3 = 0;
+				
+				for (int i = 0; i < ecgRawSampleNum4; i++)
 				{
-						EtcIndex = 0;
+						putchar((unsigned char) (ecgRaw4[i] >> 8)); 
+						putchar((unsigned char) (ecgRaw4[i] >> 0));
 				}
-				putchar((unsigned char) EtcIndex);
-				putchar((unsigned char) (etcDataRaw[EtcIndex] >> 8));
-				putchar((unsigned char) (etcDataRaw[EtcIndex] >> 0));
-				EtcIndex++;
-
+				ecgIndex4 = 0;
+				
+				for (int i = 0; i < ecgRawSampleNum5; i++)
+				{
+						putchar((unsigned char) (ecgRaw5[i] >> 8)); 
+						putchar((unsigned char) (ecgRaw5[i] >> 0));
+				}
+				ecgIndex5 = 0;				
+				
 				disable45byteLabViewPrinter();
 		}
 }
@@ -224,6 +307,54 @@ void print45byteLabView()
 //				putchar((unsigned char) (etcDataRaw[EtcIndex] >> 8));
 //				putchar((unsigned char) (etcDataRaw[EtcIndex] >> 0));
 //				EtcIndex++;
+
+//				disable45byteLabViewPrinter();
+//		}
+//}
+
+
+//void print45byteLabView()
+//{
+//    if(flag45byteLabViewPrinter)
+//		{
+//				nrf_gpio_pin_toggle(17);
+//				putchar((unsigned char) 0xFE);
+//				putchar((unsigned char) 50);
+
+//				for (int i = 0; i < ecgRawSampleNum; i++)
+//				{
+//						putchar((unsigned char) (ecgRaw[i] >> 8)); 
+//						putchar((unsigned char) (ecgRaw[i] >> 0));
+//				}
+//				ecgIndex = 0;
+//				
+//				for (int i = 0; i < ecgRawSampleNum2; i++)
+//				{
+//						putchar((unsigned char) (ecgRaw2[i] >> 8)); 
+//						putchar((unsigned char) (ecgRaw2[i] >> 0));
+//				}
+//				ecgIndex2 = 0;
+//				
+//				for (int i = 0; i < ecgRawSampleNum; i++)
+//				{
+//						putchar((unsigned char) (ecgRaw[i] >> 8)); 
+//						putchar((unsigned char) (ecgRaw[i] >> 0));
+//				}
+//				ecgIndex = 0;
+//				
+//				for (int i = 0; i < ecgRawSampleNum; i++)
+//				{
+//						putchar((unsigned char) (ecgRaw[i] >> 8)); 
+//						putchar((unsigned char) (ecgRaw[i] >> 0));
+//				}
+//				ecgIndex = 0;
+//				
+//				for (int i = 0; i < ecgRawSampleNum; i++)
+//				{
+//						putchar((unsigned char) (ecgRaw[i] >> 8)); 
+//						putchar((unsigned char) (ecgRaw[i] >> 0));
+//				}
+//				ecgIndex = 0;
 
 //				disable45byteLabViewPrinter();
 //		}

@@ -10,7 +10,7 @@
 
 void initAD8232()
 {
-		initPortOutSet(AVCC_EN);	
+//		initPortOutSet(AVCC_EN);	
 	
 // Normal   : High(Set)
 // ShutDown : Low(Clear)	
@@ -27,7 +27,7 @@ void initAD8232()
 		initPortOutSet(AD8232_ACDC);
 	  nrf_delay_us(200);
 	
-		NRF_LOG_INFO("AD8232 init Success");
-		NRF_LOG_FLUSH();
+//		NRF_LOG_INFO("AD8232 init Success");
+//		NRF_LOG_FLUSH();
 }
  
